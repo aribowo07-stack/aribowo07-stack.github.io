@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Otomasi Laporan Keuangan · Studi kasus Ari Wibowo</title>
+<meta name="description" content="Studi kasus: ringkasan keuangan harian dan audit jurnal mingguan yang berjalan sendiri, dengan pemeriksaan angka sebelum dikirim. Berikutnya: laporan bulanan Laba Rugi, Neraca, dan Arus Kas.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Otomasi laporan keuangan harian & audit jurnal mingguan · Ari Wibowo">
+<meta property="og:description" content="Ringkasan keuangan terkirim tiap sore setelah lolos 17 pemeriksaan angka, dan jurnal seminggu diaudit otomatis tiap Senin.">
+<meta property="og:image" content="https://aribowo07-stack.github.io/img/og-otomasi-keuangan.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://aribowo07-stack.github.io/otomasi-keuangan/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/absensi-demo/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/gaya.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="merek" href="/">Ari Wibowo <span>· Portofolio</span></a>
+    <a class="btn kecil" href="/">Semua portofolio</a>
+  </header>
+
+  <div class="hero">
+    <div>
+      <div class="kicker">Studi kasus · Otomasi keuangan</div>
+      <h1>Laporan keuangan harian dan audit jurnal mingguan yang berjalan sendiri</h1>
+      <p class="lead">Pembukuan sebuah kontraktor interior dan konstruksi dicatat di Google Drive, tetapi laporannya baru tersusun bila ada yang membuka Excel. Saya membangun otomasi yang tiap sore menarik jurnal, memeriksa angkanya, lalu mengirim ringkasan keuangan ke email kantor. Setiap Senin, jurnal seminggu diaudit otomatis.</p>
+      <div class="tombol">
+        <a class="btn utama" href="#cara">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+          Lihat cara kerjanya</a>
+        <a class="btn" href="/">Portofolio lainnya</a>
+      </div>
+      <p class="catatan">Ilustrasi email dan hasil audit memakai angka dan nama fiktif.</p>
+    </div>
+
+    <div class="mock" aria-label="Ilustrasi email ringkasan keuangan harian dengan data fiktif">
+      <div class="kepala"><div><b>Ringkasan Keuangan Harian</b><br><small>Per Jumat, 16 Okt · sync terakhir OK · neraca seimbang (selisih Rp0)</small></div><span class="label-fiktif">Data fiktif</span></div>
+      <div class="isi">
+        <div class="ubin">
+          <div><small>Kas &amp; bank</small><b>Rp84,2 jt</b></div>
+          <div><small>Piutang</small><b>Rp312,5 jt</b></div>
+          <div><small>Hutang</small><b>Rp146,8 jt</b></div>
+          <div><small>Uang muka proyek</small><b>Rp620,0 jt</b></div>
+          <div><small>Layak diakui pendapatan</small><b>Rp215,4 jt</b></div>
+          <div><small>Termin belum ditagih</small><b>Rp95,0 jt</b></div>
+        </div>
+        <div class="sorot"><b>3 hal penting hari ini.</b> Termin Proyek B sudah tercapai tetapi belum ditagih. Kas cukup untuk sekitar 3 minggu belanja proyek. Satu transaksi jurnal belum bertanggal sehingga belum masuk neraca saldo.<small>Paragraf ini ditulis AI dari angka di atas, bukan bagian dari verifikasi angka.</small></div>
+        <table class="tabel">
+          <tr><th>Proyek</th><th class="r">Progres fisik</th><th class="r">Serapan biaya</th></tr>
+          <tr><td>Rumah tinggal A</td><td class="r">82%</td><td class="r">76%</td></tr>
+          <tr><td>Interior kantor B</td><td class="r">55%</td><td class="r">61%</td></tr>
+          <tr><td>Renovasi toko C</td><td class="r">20%</td><td class="r">12%</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="angka">
+    <div><b>Tiap sore</b><span>ringkasan keuangan sampai di email kantor</span></div>
+    <div><b>17</b><span>pemeriksaan angka sebelum dikirim</span></div>
+    <div><b>±8 detik</b><span>menyusun ringkasan, sebelumnya ±20 menit</span></div>
+    <div><b>200+</b><span>baris jurnal diaudit tiap minggu</span></div>
+    <div><b>10.000+</b><span>baris jurnal tahun berjalan</span></div>
+  </div>
+
+  <section>
+    <div class="dua">
+      <h2>Masalah awal</h2>
+      <ul class="daftar">
+        <li>Jurnal dicatat di Google Drive, sementara laporan seperti neraca, buku besar, dan posisi proyek ada di workbook Excel besar yang harus dihitung ulang dan disegarkan secara manual.</li>
+        <li>Pemilik usaha tidak punya gambaran harian soal kas, piutang, hutang, dan uang muka proyek kecuali ada yang menyusunnya.</li>
+        <li>Salah kode akun dan transaksi di akun yang keliru baru ketahuan saat tutup buku, ketika sudah menumpuk.</li>
+        <li>Percobaan awal dengan AI terjadwal di cloud mahal dan rapuh: dibatasi waktu sandbox, kena batas sesi, dan sering gagal tanpa ada yang tahu.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Yang saya bangun</h2>
+    <div class="kartu">
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div>
+        <h3>Sinkronisasi jurnal harian</h3>
+        <p>Tiap sore jurnal diunduh dari Drive, digabung ke workbook induk lewat Excel, dihitung ulang, lalu diverifikasi sel per sel. Bila gagal di tengah jalan, workbook dipulihkan dari cadangan.</p>
+      </div>
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <h3>Ringkasan keuangan harian</h3>
+        <p>Kas dan bank, piutang, hutang, uang muka proyek, termin yang belum ditagih, serta progres fisik dibanding serapan biaya per proyek. Dikirim ke email kantor dan Telegram.</p>
+      </div>
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></div>
+        <h3>Angka dicek sebelum dikirim</h3>
+        <p>17 pemeriksaan otomatis. Total tiap kelompok akun harus cocok dengan neraca saldo sampai Rp1. Kalau tidak cocok, ringkasan tidak dikirim.</p>
+      </div>
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>Audit jurnal mingguan</h3>
+        <p>Setiap Senin, AI (Claude Opus) memeriksa jurnal seminggu terhadap kebijakan akuntansi perusahaan. Hasilnya berkas Excel berisi temuan bertingkat dan ringkasannya, dikirim ke email kantor.</p>
+      </div>
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
+        <h3>Pengawasan dan alarm</h3>
+        <p>Riwayat setiap run, dasbor, notifikasi, pengaman bila Excel macet, dan berkas peringatan di desktop bila data tidak tersegarkan lebih dari 20 jam.</p>
+      </div>
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <h3>Berikutnya: laporan bulanan</h3>
+        <p>Laba Rugi, Neraca, dan Arus Kas bulanan yang tersusun otomatis dari jurnal yang sama, dengan cek keseimbangan sebelum dikirim. Sedang disiapkan.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cara">
+    <h2>Cara kerjanya</h2>
+    <h3 style="margin-bottom:10px">Setiap sore</h3>
+    <div class="alur enam">
+      <div><b>Jurnal di Drive</b><small>Staf mencatat transaksi seperti biasa.</small></div>
+      <div><b>Unduh</b><small>Diambil otomatis, dicek keutuhan berkasnya.</small></div>
+      <div><b>Gabung &amp; hitung ulang</b><small>Masuk ke workbook induk lewat Excel.</small></div>
+      <div><b>Verifikasi</b><small>Sel per sel, dan neraca harus seimbang.</small></div>
+      <div><b>Susun ringkasan</b><small>Skrip menghitung, AI menulis 3 hal penting.</small></div>
+      <div><b>Kirim</b><small>Email kantor dan Telegram.</small></div>
+    </div>
+    <h3 style="margin:22px 0 10px">Setiap Senin</h3>
+    <div class="alur empat">
+      <div><b>Ambil jurnal seminggu</b><small>Termasuk transaksi susulan yang masuk terlambat.</small></div>
+      <div><b>Audit AI</b><small>Dicocokkan dengan kebijakan akuntansi dan temuan minggu lalu.</small></div>
+      <div><b>Berkas temuan</b><small>Excel bertingkat Tinggi, Sedang, Rendah.</small></div>
+      <div><b>Kirim ke kantor</b><small>Ringkasan di badan email, berkas sebagai lampiran.</small></div>
+    </div>
+
+    <figure class="mock" style="margin-top:18px">
+      <div class="kepala"><b>Hasil audit jurnal mingguan</b><span class="label-fiktif">Data fiktif</span></div>
+      <div class="isi" style="overflow-x:auto">
+        <table class="tabel">
+          <tr><th>Tingkat</th><th>Tgl</th><th>Keterangan</th><th>Tercatat di</th><th>Seharusnya</th></tr>
+          <tr><td><span class="tag t-tinggi">Tinggi</span></td><td>06/10</td><td>Termin proyek langsung diakui sebagai pendapatan</td><td>401-01 Penjualan Jasa Konstruksi</td><td>201-02 Uang Muka Penjualan</td></tr>
+          <tr><td><span class="tag t-tinggi">Tinggi</span></td><td>07/10</td><td>Empat baris dengan kode akun bergeser satu baris</td><td>Akun berurutan keliru</td><td>Kode sesuai keterangan</td></tr>
+          <tr><td><span class="tag t-sedang">Sedang</span></td><td>08/10</td><td>Pembelian amplas dan kuas proyek</td><td>500-03 Biaya Material Pendukung</td><td>600-29 Biaya Perlengkapan Kerja</td></tr>
+          <tr><td><span class="tag t-abu">Reviu</span></td><td>09/10</td><td>Biaya administrasi bank Rp6.500</td><td colspan="2">Wajar, sesuai pengecualian kebijakan</td></tr>
+        </table>
+      </div>
+    </figure>
+  </section>
+
+  <section>
+    <div class="dua">
+      <h2>Peran saya</h2>
+      <div>
+        <ul class="daftar">
+          <li>Menentukan isi laporan dan aturan pemeriksaannya bersama pemilik usaha.</li>
+          <li>Membangun skrip Python, jadwal Windows Task Scheduler, dan runner yang menjalankan ketiga tugas, dengan bantuan Claude Code.</li>
+          <li>Memindahkan penyusunan ringkasan dari AI ke skrip yang pasti hasilnya. AI kini hanya menulis paragraf "3 hal penting".</li>
+          <li>Menelusuri dan menutup akar kegagalan: Excel yang menggantung tanpa batas waktu, cache yang dibersihkan otomatis oleh Windows, dan jadwal cloud yang meleset belasan jam.</li>
+          <li>Memelihara dokumen kebijakan akuntansi yang menjadi acuan audit, termasuk preseden keputusan pemilik usaha.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="dua">
+      <h2>Hasil</h2>
+      <div>
+        <ul class="daftar">
+          <li>Ringkasan keuangan sampai di email kantor tiap sore tanpa ada yang membuka Excel.</li>
+          <li>Biaya menyusun ringkasan turun dari sekitar $2 per hari menjadi di bawah $0,05, dan waktunya dari sekitar 20 menit menjadi 8 detik.</li>
+          <li>Audit mingguan menangkap kesalahan nyata sebelum tutup buku, misalnya kode akun yang bergeser, hutang yang tercatat di akun keliru, dan transaksi tanpa akun.</li>
+          <li>Kegagalan tidak lagi senyap: setiap run tercatat, dan ada alarm bila data tertinggal.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="dua">
+      <h2>Di balik layar</h2>
+      <div>
+        <p><span class="chip">Python</span><span class="chip">Excel COM &amp; Power Query</span><span class="chip">rclone (Google Drive)</span><span class="chip">Windows Task Scheduler</span><span class="chip">Email SMTP &amp; Telegram</span><span class="chip">Claude Opus untuk audit</span><span class="chip">Claude Haiku untuk sintesis</span></p>
+        <div class="kotak"><p>Setiap perubahan diuji lewat Task Scheduler sungguhan pada salinan workbook, lalu dibandingkan sel per sel sebelum dipasang. Contohnya, saat batas rentang rumus diperlebar, 0 dari 212.113 sel berubah nilainya.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Portofolio lainnya</h2>
+    <div class="lain">
+      <a href="/absensi/">Aplikasi Absensi &amp; Penggajian<small>Webapp 7 peran, ada video dan demo tanpa login</small></a>
+      <a href="/kas-lapangan/">SOP Kas Lapangan<small>Imprest, plafon berbasis data, dan formulir persetujuan otomatis</small></a>
+      <a href="/fuel-tracker/">Penerapan Fuel Tracker<small>Dari kebocoran BBM sampai rencana pemasangan sensor</small></a>
+    </div>
+  </section>
+</div>
+<footer>
+  <div class="wrap">© 2026 Ari Wibowo. Ilustrasi memakai angka dan nama fiktif.</div>
+</footer>
+</body>
+</html>

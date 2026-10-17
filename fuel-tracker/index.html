@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Penerapan Fuel Tracker · Studi kasus Ari Wibowo</title>
+<meta name="description" content="Studi kasus: mengukur kebocoran BBM dari data kas lapangan, menilai 140 unit alat untuk sensor BBM dan GPS, dan menyiapkan pemasangan bertahap.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Penerapan fuel tracker untuk alat berat & truk · Ari Wibowo">
+<meta property="og:description" content="Pertalite eceran 44% di atas harga SPBU, 76% catatan BBM tanpa liter. Analisa kebocoran, peta prioritas 140 unit alat, dan rancangan pilot.">
+<meta property="og:image" content="https://aribowo07-stack.github.io/img/og-fuel-tracker.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://aribowo07-stack.github.io/fuel-tracker/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/absensi-demo/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/gaya.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="merek" href="/">Ari Wibowo <span>· Portofolio</span></a>
+    <a class="btn kecil" href="/">Semua portofolio</a>
+  </header>
+
+  <div class="hero">
+    <div>
+      <div class="kicker">Studi kasus · Kontrol biaya operasional</div>
+      <h1>Penerapan fuel tracker untuk armada alat berat dan truk</h1>
+      <p class="lead">BBM adalah pengeluaran kas lapangan terbesar kedua dan yang paling sulit diawasi. Saya mengukur kebocorannya dari data kas, menilai alat mana yang paling layak dipasangi sensor BBM dan GPS, lalu menyiapkan pemasangannya secara bertahap.</p>
+      <div class="tombol">
+        <a class="btn utama" href="#cara">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+          Lihat cara kerjanya</a>
+        <a class="btn" href="/">Portofolio lainnya</a>
+      </div>
+      <p class="catatan">Angka berasal dari data kas lapangan dan daftar alat perusahaan. Nama perusahaan, vendor, dan orang tidak ditampilkan.</p>
+    </div>
+
+    <figure class="mock" aria-label="Grafik harga BBM per liter yang dibayar dibanding harga pompa">
+      <div class="kepala"><div><b>Harga per liter yang dibayar</b><br><small>Rata-rata tertimbang dari catatan kas, dibanding harga pompa SPBU</small></div><span class="label-fiktif">Data asli</span></div>
+      <div class="isi batang">
+        <div class="baris"><span>Pertalite, dibayar</span><div class="jalur"><div class="isi-b oranye" style="width:100%"></div></div><span class="nilai">14.425</span></div>
+        <div class="baris"><span>Pertalite, SPBU</span><div class="jalur"><div class="isi-b abu" style="width:69.3%"></div></div><span class="nilai">10.000</span></div>
+        <div class="baris"><span>Pertamax, dibayar</span><div class="jalur"><div class="isi-b" style="width:88.1%"></div></div><span class="nilai">12.703</span></div>
+        <div class="baris"><span>Pertamax, SPBU</span><div class="jalur"><div class="isi-b abu" style="width:87.3%"></div></div><span class="nilai">12.600</span></div>
+        <div class="sorot">Pertalite dibayar <b>44% di atas harga pompa</b>, Pertamax normal. Sebabnya saluran beli (eceran dan botolan), bukan jenis BBM: 96% liter Pertalite tercatat bulat, sedangkan liter Pertamax kebanyakan desimal seperti struk pompa.<small>Harga Pertamax sesuai harga pompa pada periode data. Rupiah per liter.</small></div>
+      </div>
+    </figure>
+  </div>
+
+  <div class="angka">
+    <div><b>140</b><span>unit alat dinilai</span></div>
+    <div><b>1.250</b><span>transaksi BBM dianalisis</span></div>
+    <div><b>19%</b><span>kas lapangan habis untuk BBM</span></div>
+    <div><b>+44%</b><span>harga Pertalite eceran vs SPBU</span></div>
+    <div><b>76%</b><span>catatan BBM tanpa jumlah liter</span></div>
+  </div>
+
+  <section>
+    <div class="dua">
+      <h2>Masalah awal</h2>
+      <ul class="daftar">
+        <li>BBM menyerap 19% kas lapangan dan dibeli tunai oleh banyak orang di banyak lokasi proyek.</li>
+        <li>Pertalite dibayar rata-rata 44% di atas harga SPBU karena dibeli eceran. Harga per liternya menumpuk di angka bulat 15.000, 18.000, dan 20.000, persis tarif eceran berjenjang.</li>
+        <li>76% catatan pembelian BBM tidak menyebut liter, jadi konsumsi per alat tidak bisa dihitung. Pembeli Pertalite terbesar tidak punya satu pun catatan liter.</li>
+        <li>Alat berat yang menganggur di lapangan rawan kehilangan solar, dan tidak ada data yang bisa membuktikan atau membantahnya.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Yang saya bangun</h2>
+    <div class="kartu">
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22V6a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v16"/><path d="M3 22h11M14 10h2a2 2 0 0 1 2 2v5a1.5 1.5 0 0 0 3 0V9l-3-3"/></svg></div>
+        <h3>Analisa kebocoran BBM</h3>
+        <p>Membedah 1.250 transaksi BBM: harga per liter, saluran beli, pola nominal bulat, dan konsentrasi per lokasi.</p>
+      </div>
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></div>
+        <h3>Peta prioritas 140 unit alat</h3>
+        <p>Menilai kecocokan sensor BBM dan GPS untuk tiap jenis alat: truk di jalan umum prioritas tertinggi, alat berat bertangki sendiri prioritas tinggi, plant tetap tidak cocok.</p>
+      </div>
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M5 9l7-7 7 7"/></svg></div>
+        <h3>Rancangan pilot bertahap</h3>
+        <p>Pemasangan dimulai dari sebagian unit prioritas sebagai masa uji, lalu diperluas ke armada lain bila hasilnya terbukti.</p>
+      </div>
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div>
+        <h3>Telaah kontrak vendor</h3>
+        <p>Membaca syarat dan ketentuan vendor pasal demi pasal, lalu menyusun daftar perubahan yang diminta perusahaan sebelum kontrak ditandatangani.</p>
+      </div>
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 2 5-6"/></svg></div>
+        <h3>Prakiraan biaya BBM</h3>
+        <p>Simulasi 20.000 skenario harga selama 6 bulan untuk membandingkan tiga strategi pembelian, termasuk risiko lonjakan harga BBM nonsubsidi.</p>
+      </div>
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg></div>
+        <h3>Usulan pembelian tiga jalur</h3>
+        <p>Kendaraan isi di SPBU secara nontunai, mesin lapangan dari depot kecil yang terkunci dengan kartu stok, dan kas hanya untuk keadaan darurat. Sesuai aturan BPH Migas soal jerigen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cara">
+    <h2>Cara kerjanya</h2>
+    <div class="alur empat">
+      <div><b>Ukur kebocoran</b><small>Data kas lapangan: harga per liter, saluran beli, catatan liter.</small></div>
+      <div><b>Pilih alat</b><small>140 unit dinilai per jenis, mana yang paling layak dipantau.</small></div>
+      <div><b>Rancang pilot</b><small>Mulai dari sebagian unit prioritas sebagai masa uji.</small></div>
+      <div><b>Siapkan kontrak</b><small>Telaah syarat vendor dan daftar perubahan yang diminta.</small></div>
+    </div>
+
+    <div class="figur-grid" style="margin-top:18px">
+      <figure class="mock" style="grid-column:1/-1">
+        <div class="kepala"><b>Peta prioritas pemasangan</b><span class="label-fiktif">Ringkasan penilaian</span></div>
+        <div class="isi" style="overflow-x:auto">
+          <table class="tabel">
+            <tr><th>Jenis alat</th><th>Kecocokan</th><th>Alasan</th></tr>
+            <tr><td>Dump truck, truck mixer, tronton</td><td><span class="tag t-ok">Prioritas tertinggi</span></td><td>Berjalan di jalan umum, rute panjang, tangki besar</td></tr>
+            <tr><td>Excavator, bulldozer, wheel loader, grader, roller, finisher</td><td><span class="tag t-info">Prioritas tinggi</span></td><td>Bertangki sendiri dan sering diam di lokasi, rawan kehilangan solar</td></tr>
+            <tr><td>Concrete pump</td><td><span class="tag t-sedang">Bisa, terbatas</span></td><td>Mesin diesel sendiri tapi ditarik kendaraan lain, GPS kurang bermanfaat</td></tr>
+            <tr><td>Asphalt mixing plant, batching plant</td><td><span class="tag t-abu">Kurang cocok</span></td><td>Instalasi tetap bertenaga listrik atau genset; yang perlu dipantau tangki timbunnya</td></tr>
+          </table>
+        </div>
+      </figure>
+
+      <figure class="mock" style="grid-column:1/-1">
+        <div class="kepala"><b>Prakiraan biaya bensin 6 bulan</b><span class="label-fiktif">Simulasi 20.000 skenario</span></div>
+        <div class="isi batang">
+          <div class="baris"><span>Praktik sekarang</span><div class="jalur"><div class="isi-b abu" style="width:93.2%"></div></div><span class="nilai">100</span></div>
+          <div class="baris"><span>Semua Pertamax di SPBU</span><div class="jalur"><div class="isi-b oranye" style="width:100%"></div></div><span class="nilai">107</span></div>
+          <div class="baris"><span>Hibrida</span><div class="jalur"><div class="isi-b hijau" style="width:65.1%"></div></div><span class="nilai">70</span></div>
+          <p class="catatan" style="margin:6px 0 0">Indeks biaya, praktik sekarang = 100. Hibrida: kendaraan isi Pertalite di SPBU secara nontunai, hanya mesin lapangan memakai Pertamax. Pindah total ke Pertamax justru lebih mahal setelah harganya melonjak 32% dalam sehari pada Juni 2026, dan paling rentan terhadap lonjakan berikutnya.</p>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="dua">
+      <h2>Peran saya</h2>
+      <div>
+        <ul class="daftar">
+          <li>Mengolah data BBM dari kas lapangan dan menulis memo usulan pengadaan BBM terpusat.</li>
+          <li>Menilai kecocokan sensor untuk tiap jenis alat dari daftar 140 unit milik perusahaan.</li>
+          <li>Menelaah syarat dan ketentuan vendor, lalu menyusun daftar perubahan yang diminta perusahaan.</li>
+          <li>Memberi rekomendasi tahapan pemasangan dan strategi pembelian BBM kepada pemilik usaha.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="dua">
+      <h2>Hasil</h2>
+      <div>
+        <ul class="daftar">
+          <li>Kebocoran BBM yang tadinya hanya dugaan kini terukur, lengkap dengan lokasi dan pola transaksinya.</li>
+          <li>Peta prioritas menjadi dasar memilih unit pilot, sehingga sensor pertama dipasang di alat dengan risiko terbesar.</li>
+          <li>Strategi pembelian hibrida diperkirakan sekitar 30% lebih murah dibanding praktik sekarang, sementara pindah total ke Pertamax justru sekitar 7% lebih mahal.</li>
+          <li>Langkah tanpa biaya yang bisa langsung dijalankan: setiap pembelian BBM wajib mencatat liter, harga per liter, dan alat yang diisi.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="dua">
+      <h2>Di balik layar</h2>
+      <div>
+        <p><span class="chip">Python untuk analisa transaksi</span><span class="chip">Simulasi Monte Carlo</span><span class="chip">Excel &amp; Word</span></p>
+        <div class="kotak"><p>Saluran beli dibaca dari angka liternya sendiri. Liter bulat (20 L) hampir pasti eceran atau botolan, sedangkan liter desimal (23,81 L) berasal dari struk pompa. Pola ini memisahkan masalah saluran dari masalah jenis BBM tanpa perlu bukti lain.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Portofolio lainnya</h2>
+    <div class="lain">
+      <a href="/absensi/">Aplikasi Absensi &amp; Penggajian<small>Webapp 7 peran, ada video dan demo tanpa login</small></a>
+      <a href="/kas-lapangan/">SOP Kas Lapangan<small>Imprest, plafon berbasis data, dan formulir persetujuan otomatis</small></a>
+      <a href="/otomasi-keuangan/">Otomasi Laporan Keuangan<small>Ringkasan harian dan audit jurnal mingguan otomatis</small></a>
+    </div>
+  </section>
+</div>
+<footer>
+  <div class="wrap">© 2026 Ari Wibowo. Nama perusahaan, vendor, dan orang tidak ditampilkan.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOP Kas Lapangan · Studi kasus Ari Wibowo</title>
+<meta name="description" content="Studi kasus: SOP kas lapangan berbasis data untuk 16 pemegang kas di 23 proyek konstruksi. 4.638 transaksi dianalisis, plafon bertingkat, formulir persetujuan otomatis.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SOP kas lapangan berbasis data · Ari Wibowo">
+<meta property="og:description" content="4.638 transaksi kas lapangan dianalisis menjadi SOP imprest, plafon bertingkat, dan formulir persetujuan yang terisi otomatis.">
+<meta property="og:image" content="https://aribowo07-stack.github.io/img/og-kas-lapangan.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://aribowo07-stack.github.io/kas-lapangan/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/absensi-demo/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/gaya.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="merek" href="/">Ari Wibowo <span>· Portofolio</span></a>
+    <a class="btn kecil" href="/">Semua portofolio</a>
+  </header>
+
+  <div class="hero">
+    <div>
+      <div class="kicker">Studi kasus · Tata kelola keuangan</div>
+      <h1>SOP kas lapangan untuk 16 pemegang kas di 23 proyek</h1>
+      <p class="lead">Uang kas proyek dipegang dan dilaporkan dengan cara masing-masing. Saya membedah seluruh transaksi kas lapangan selama 19 bulan, lalu menyusun SOP, template laporan, dan rencana transisinya sampai siap dijalankan.</p>
+      <div class="tombol">
+        <a class="btn utama" href="#cara">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+          Lihat cara kerjanya</a>
+        <a class="btn" href="/">Portofolio lainnya</a>
+      </div>
+      <p class="catatan">Angka berasal dari data kas lapangan Desember 2024 sampai Juni 2026. Ilustrasi memakai data fiktif; nama orang, perusahaan, dan proyek tidak ditampilkan.</p>
+    </div>
+
+    <div class="mock" aria-label="Ilustrasi formulir persetujuan kas lapangan dengan data fiktif">
+      <div class="kepala"><div><b>Formulir Persetujuan Kas Lapangan</b><br><small>Pemegang kas: Pelaksana Proyek A · PD 12 · 7–13 Agu</small></div><span class="label-fiktif">Data fiktif</span></div>
+      <div class="isi">
+        <table class="tabel">
+          <tr><td>Total pengeluaran</td><td class="r">Rp2.184.000</td></tr>
+          <tr><td>Plafon kas lapangan</td><td class="r">Rp3.000.000</td></tr>
+          <tr class="total"><td>Saldo akhir</td><td class="r">Rp816.000</td></tr>
+        </table>
+        <div class="ttd"><div>Dibuat<br>Pemegang kas</div><div>Diperiksa<br>Adm. keuangan</div><div>Disetujui<br>Manajer operasional</div></div>
+        <table class="tabel" style="margin-top:12px">
+          <tr><th>Tgl</th><th>Rincian</th><th class="r">Rp</th></tr>
+          <tr class="sub"><td colspan="2">A. Operasional lapangan · 3 transaksi</td><td class="r">776.000</td></tr>
+          <tr><td>08/08</td><td>BBM Pertamax 20 L × 16.300, genset</td><td class="r">326.000</td></tr>
+          <tr><td>09/08</td><td>Wakar jaga alat, 2 malam</td><td class="r">300.000</td></tr>
+          <tr><td>11/08</td><td>Uang makan lembur, 6 orang (nama terlampir)</td><td class="r">150.000</td></tr>
+          <tr class="sub"><td colspan="2">B. Administrasi &amp; material · 2 transaksi</td><td class="r">1.000.000</td></tr>
+          <tr><td>08/08</td><td>Kawat bendrat 2 roll</td><td class="r">350.000</td></tr>
+          <tr><td>10/08</td><td>Servis, ganti aki genset</td><td class="r">650.000</td></tr>
+          <tr class="sub"><td colspan="2">C. Mess &amp; P3K · 2 transaksi</td><td class="r">408.000</td></tr>
+          <tr><td>12/08</td><td>Galon &amp; gas mess</td><td class="r">258.000</td></tr>
+          <tr><td>12/08</td><td>Obat luka P3K</td><td class="r">150.000</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="angka">
+    <div><b>4.638</b><span>transaksi kas dianalisis</span></div>
+    <div><b>16</b><span>pemegang kas lapangan</span></div>
+    <div><b>23</b><span>proyek</span></div>
+    <div><b>231</b><span>laporan mingguan digabung jadi satu tabel</span></div>
+    <div><b>11 dari 16</b><span>cukup di plafon terendah</span></div>
+  </div>
+
+  <section>
+    <div class="dua">
+      <h2>Masalah awal</h2>
+      <ul class="daftar">
+        <li>Tiap pemegang kas memakai format laporannya sendiri: ada yang tanpa kolom saldo, ada subtotal yang salah ketik, dan sisa kas yang defisit dicatat di kolom yang berbeda-beda. Merekap 16 berkas butuh penanganan khusus untuk tiap format.</li>
+        <li>Tidak ada plafon. Isi ulang kas per minggu bisa beberapa juta sampai puluhan juta, dan belanja yang seharusnya lewat pembelian resmi ikut keluar dari kas, seperti alat ukur, sewa alat berat, dan jasa.</li>
+        <li>Uang makan kru dibayar tunai dari kas dan menjadi 41,5% dari seluruh pengeluaran. Barang tahan lama senilai 4,6% kas habis dibiayakan tanpa pernah tercatat sebagai inventaris.</li>
+        <li>BBM (19% pengeluaran) dibeli tunai, dan 76% catatannya tidak menyebut berapa liter.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Yang saya bangun</h2>
+    <div class="kartu">
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+        <h3>Plafon bertingkat berbasis data</h3>
+        <p>Sistem imprest dengan plafon tetap per minggu dalam tiga tingkat. Tingkat tiap pemegang kas dihitung dari pola belanjanya sendiri (persentil ke-90), bukan tebakan.</p>
+      </div>
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+        <h3>Kategori belanja yang jelas</h3>
+        <p>Tiga kategori berkode (A operasional, B administrasi &amp; material, C mess &amp; P3K). Yang tidak boleh lewat kas punya jalurnya sendiri: pembelian resmi atau transfer.</p>
+      </div>
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></div>
+        <h3>Template dengan formulir otomatis</h3>
+        <p>Pemegang kas cukup mengisi transaksi. Formulir persetujuan terisi sendiri: ringkasan, rincian per kategori, dan blok tanda tangan, dengan huruf besar supaya mudah dibaca direksi.</p>
+      </div>
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Siklus mingguan yang tetap</h3>
+        <p>Laporan masuk Rabu, diperiksa (bukti sah dan nilainya cocok), disetujui, lalu dana cair Jumat. Tidak ada isi ulang baru sebelum laporan sebelumnya beres.</p>
+      </div>
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
+        <h3>Batas dan bukti</h3>
+        <p>Transaksi di atas batas tertentu wajib bermeterai atau tidak boleh tunai. Jamuan dan uang makan lembur wajib menyebut nama penerimanya.</p>
+      </div>
+      <div>
+        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/></svg></div>
+        <h3>Inventaris dan BBM</h3>
+        <p>Kriteria barang yang wajib dicatat, daftar periksa 274 barang yang selama ini tak tercatat, dan usulan pembelian BBM tiga jalur yang sesuai aturan BPH Migas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cara">
+    <h2>Cara kerjanya</h2>
+    <div class="alur lima">
+      <div><b>Belanja &amp; catat</b><small>Pemegang kas mengisi tiap transaksi di template, dengan kategori dan bukti.</small></div>
+      <div><b>Rabu: laporan masuk</b><small>Batas kirim laporan mingguan.</small></div>
+      <div><b>Verifikasi</b><small>Adm. keuangan memastikan bukti sah dan nilainya cocok dengan saldo.</small></div>
+      <div><b>Persetujuan</b><small>Formulir otomatis ditandatangani manajer operasional.</small></div>
+      <div><b>Jumat: dana cair</b><small>Kas diisi kembali sampai plafon, ditransfer.</small></div>
+    </div>
+
+    <div class="figur-grid" style="margin-top:18px">
+      <figure class="mock">
+        <div class="kepala"><b>Komposisi pengeluaran sebelum SOP</b><span class="label-fiktif">Data asli, % saja</span></div>
+        <div class="isi batang">
+          <div class="baris"><span>Uang makan</span><div class="jalur"><div class="isi-b oranye" style="width:100%"></div></div><span class="nilai">41,5%</span></div>
+          <div class="baris"><span>BBM</span><div class="jalur"><div class="isi-b" style="width:45.8%"></div></div><span class="nilai">19,0%</span></div>
+          <div class="baris"><span>Mess, dapur, air</span><div class="jalur"><div class="isi-b" style="width:13.3%"></div></div><span class="nilai">5,5%</span></div>
+          <div class="baris"><span>Servis &amp; suku cadang</span><div class="jalur"><div class="isi-b" style="width:12.3%"></div></div><span class="nilai">5,1%</span></div>
+          <div class="baris"><span>Material</span><div class="jalur"><div class="isi-b" style="width:10.4%"></div></div><span class="nilai">4,3%</span></div>
+          <div class="baris"><span>Jaga alat (wakar)</span><div class="jalur"><div class="isi-b" style="width:8.4%"></div></div><span class="nilai">3,5%</span></div>
+          <div class="baris"><span>Peralatan &amp; APD</span><div class="jalur"><div class="isi-b" style="width:8.4%"></div></div><span class="nilai">3,5%</span></div>
+          <div class="baris"><span>Lainnya</span><div class="jalur"><div class="isi-b abu" style="width:42.4%"></div></div><span class="nilai">17,6%</span></div>
+        </div>
+        <figcaption style="padding:0 18px 14px">Uang makan, hampir separuh kas, dipindah ke payroll bulanan sehingga kas lapangan tinggal untuk operasional.</figcaption>
+      </figure>
+
+      <figure class="mock">
+        <div class="kepala"><b>Plafon kas per minggu</b><span class="label-fiktif">Hasil hitungan</span></div>
+        <div class="isi">
+          <table class="tabel">
+            <tr><th>Tingkat</th><th class="r">Plafon</th><th class="r">Pemegang kas</th></tr>
+            <tr><td><span class="tag t-ok">Tier 1</span></td><td class="r">Rp3 juta</td><td class="r">11</td></tr>
+            <tr><td><span class="tag t-sedang">Tier 2</span></td><td class="r">Rp6 juta</td><td class="r">4</td></tr>
+            <tr><td><span class="tag t-tinggi">Tier 3</span></td><td class="r">Rp10 juta</td><td class="r">1</td></tr>
+          </table>
+          <p class="catatan" style="margin:12px 0 0">Tingkat dipilih supaya plafon menutup persentil ke-90 belanja kas tiap orang per minggu, ditambah sedikit cadangan. Uang makan harian, upah, dan belanja di atas batas tunai dikeluarkan dulu dari hitungan.</p>
+        </div>
+      </figure>
+
+      <figure class="mock" style="grid-column:1/-1">
+        <div class="kepala"><b>Kategori belanja kas</b><span class="label-fiktif">Ringkasan SOP</span></div>
+        <div class="isi" style="overflow-x:auto">
+          <table class="tabel">
+            <tr><th>Kategori</th><th>Contoh</th><th>Aturan penting</th></tr>
+            <tr><td><span class="tag t-info">A. Operasional</span></td><td>BBM, transportasi, uang makan lembur, jaga alat</td><td>BBM wajib menyebut liter, harga per liter, dan alat yang diisi</td></tr>
+            <tr><td><span class="tag t-info">B. Administrasi &amp; material</span></td><td>ATK, material kecil, servis, jamuan, pulsa</td><td>Jamuan menyebut nama yang dijamu; servis tertentu hanya untuk proyek jauh</td></tr>
+            <tr><td><span class="tag t-info">C. Mess &amp; P3K</span></td><td>Kebutuhan mess, obat-obatan</td><td>Sewa mess lewat pembelian resmi, bukan kas</td></tr>
+            <tr><td><span class="tag t-abu">Tidak lewat kas</span></td><td>Alat ukur, sewa alat berat, jasa, upah, uang makan harian</td><td>Lewat pembelian resmi, transfer, atau payroll</td></tr>
+          </table>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="dua">
+      <h2>Peran saya</h2>
+      <div>
+        <ul class="daftar">
+          <li>Menggabungkan 16 berkas kas (231 laporan mingguan) menjadi satu tabel transaksi, lalu mencocokkannya dengan total di tiap laporan. Di dua laporan, tabel gabungan justru lebih benar karena subtotal aslinya salah ketik.</li>
+          <li>Menganalisis belanja per kategori, per pemegang kas, dan per proyek untuk menentukan plafon dan aturan yang masuk akal.</li>
+          <li>Menulis SOP lengkap dengan glosarium 59 istilah, template Excel, dan rencana transisi go-live.</li>
+          <li>Menyesuaikan SOP lewat beberapa putaran revisi bersama pemilik usaha dan staf keuangan, termasuk mendesain ulang formulir persetujuan supaya mudah dibaca direksi.</li>
+          <li>Menyusun materi paparan go-live untuk para pemegang kas.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="dua">
+      <h2>Hasil</h2>
+      <div>
+        <ul class="daftar">
+          <li>Satu format laporan untuk semua pemegang kas, dengan formulir persetujuan yang terisi otomatis dan bisa dicetak satu sampai dua halaman.</li>
+          <li>Plafon yang bisa dipertanggungjawabkan: 11 dari 16 pemegang kas cukup di tingkat terendah, Rp3 juta per minggu.</li>
+          <li>Rencana go-live 26 Juli 2026 secara serentak: kas lapangan dengan sistem imprest, uang makan harian lewat payroll, dan upah lewat transfer bank.</li>
+          <li>Kebocoran yang tadinya tak terlihat jadi terukur: Pertalite yang dibeli eceran 44% di atas harga SPBU, dan 274 barang tahan lama yang tak pernah tercatat.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="dua">
+      <h2>Di balik layar</h2>
+      <div>
+        <p><span class="chip">Python untuk menggabung &amp; menganalisis</span><span class="chip">Excel: dropdown dinamis, SUMIFS, FILTER, SORTBY</span><span class="chip">Word untuk SOP &amp; glosarium</span><span class="chip">PowerPoint untuk paparan</span></p>
+        <div class="kotak"><p>Formulir persetujuan diuji dengan data lima pemegang kas sungguhan (3 sampai 34 transaksi): nol selisih terhadap hitungan manual, dan sheet lain di template terbukti tidak berubah satu sel pun.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Portofolio lainnya</h2>
+    <div class="lain">
+      <a href="/absensi/">Aplikasi Absensi &amp; Penggajian<small>Webapp 7 peran, ada video dan demo tanpa login</small></a>
+      <a href="/fuel-tracker/">Penerapan Fuel Tracker<small>Dari kebocoran BBM sampai rencana pemasangan sensor</small></a>
+      <a href="/otomasi-keuangan/">Otomasi Laporan Keuangan<small>Ringkasan harian dan audit jurnal mingguan otomatis</small></a>
+    </div>
+  </section>
+</div>
+<footer>
+  <div class="wrap">© 2026 Ari Wibowo. Ilustrasi memakai data fiktif; nama orang, perusahaan, dan proyek tidak ditampilkan.</div>
+</footer>
+</body>
+</html>

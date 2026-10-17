@@ -3,236 +3,88 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Absensi Lapangan &amp; Penggajian · Studi kasus Ari Wibowo</title>
-<meta name="description" content="Studi kasus: aplikasi absensi lapangan dan penggajian untuk kontraktor jalan. 138 pekerja, 5 proyek, 7 peran pengguna. Ada video 1 menit dan demo tanpa login.">
+<title>Ari Wibowo · Portofolio</title>
+<meta name="description" content="Portofolio Ari Wibowo: sistem keuangan dan operasional untuk usaha konstruksi. Aplikasi absensi & penggajian, SOP kas lapangan, fuel tracker, dan otomasi laporan keuangan.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Aplikasi absensi lapangan & penggajian · Ari Wibowo">
-<meta property="og:description" content="Dari time sheet kertas ke aplikasi yang dipakai harian: 138 pekerja, 5 proyek, 7 peran. Tonton videonya atau coba demonya tanpa login.">
-<meta property="og:image" content="https://aribowo07-stack.github.io/img/og.png">
+<meta property="og:title" content="Portofolio Ari Wibowo · 4 studi kasus">
+<meta property="og:description" content="Absensi & penggajian, SOP kas lapangan, fuel tracker, dan otomasi laporan keuangan untuk usaha konstruksi. Ada video dan demo tanpa login.">
+<meta property="og:image" content="https://aribowo07-stack.github.io/img/og-beranda.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://aribowo07-stack.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
-<link rel="icon" href="absensi-demo/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/absensi-demo/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#f5f6fb; --card:#ffffff; --text:#14172b; --muted:#585e80; --line:#e2e5f0;
-  --brand:#4f55e6; --brand-ink:#ffffff; --brand-weak:#eceefe; --ok:#0f7a4f;
-  --shadow:0 1px 2px rgba(20,23,43,.06),0 8px 24px rgba(20,23,43,.06);
-  /* Sengaja selalu putih (permintaan Ari): HP bermode gelap pun melihat versi terang. */
-  color-scheme: light;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
-a{color:var(--brand)}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-header.top{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-.merek{font-weight:700;font-size:15px;letter-spacing:.01em}
-.merek span{color:var(--muted);font-weight:500}
-.kicker{font-size:12.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--brand)}
-h1{font-size:clamp(30px,6vw,48px);line-height:1.1;letter-spacing:-.025em;margin:12px 0 16px;font-weight:800}
-h2{font-size:clamp(22px,4vw,28px);line-height:1.2;letter-spacing:-.015em;margin:0 0 18px;font-weight:800}
-h3{font-size:17px;margin:0 0 6px;font-weight:700}
-p{margin:0 0 14px}
-.lead{font-size:clamp(16.5px,2.3vw,18.5px);color:var(--muted);max-width:640px}
-.hero{display:grid;gap:36px;align-items:center;padding:18px 0 40px}
-@media (min-width:880px){.hero{grid-template-columns:1.25fr .75fr}}
-.tombol{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 12px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;border:1.5px solid var(--line);color:var(--text);background:var(--card)}
-.btn.utama{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
-.btn svg{width:18px;height:18px}
-.catatan{font-size:13.5px;color:var(--muted)}
-.video{background:#10132b;border-radius:22px;padding:10px;box-shadow:var(--shadow);max-width:340px;margin:0 auto;width:100%}
-.video video{display:block;width:100%;aspect-ratio:9/16;border-radius:14px;background:#10132b}
-.angka{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:8px 0 6px}
-@media (min-width:720px){.angka{grid-template-columns:repeat(5,1fr)}}
-.angka div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
-.angka b{display:block;font-size:26px;letter-spacing:-.02em;line-height:1.15}
-.angka span{font-size:13.5px;color:var(--muted)}
-section{padding:44px 0;border-top:1px solid var(--line)}
-section:first-of-type{border-top:0}
-.dua{display:grid;gap:28px}
-@media (min-width:880px){.dua{grid-template-columns:.8fr 1.2fr}}
-ul.daftar{margin:0;padding:0;list-style:none}
-ul.daftar li{position:relative;padding:0 0 14px 22px}
-ul.daftar li::before{content:"";position:absolute;left:2px;top:10px;width:8px;height:8px;border-radius:3px;background:var(--brand)}
-.kartu{display:grid;gap:14px}
-@media (min-width:640px){.kartu{grid-template-columns:repeat(2,1fr)}}
-@media (min-width:960px){.kartu{grid-template-columns:repeat(3,1fr)}}
-.kartu div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
-.kartu p{color:var(--muted);font-size:15px;margin:0}
-.ikon{width:36px;height:36px;border-radius:10px;background:var(--brand-weak);color:var(--brand);display:grid;place-items:center;margin-bottom:12px}
-.ikon svg{width:20px;height:20px}
-.layar{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-@media (min-width:880px){.layar{grid-template-columns:repeat(4,1fr)}}
-figure{margin:0}
-figure img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--card)}
-figcaption{font-size:13.5px;color:var(--muted);margin-top:10px;line-height:1.5}
-.lebar{margin-top:22px}
-.lebar img{border-radius:14px}
-.chip{display:inline-block;padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:13.5px;font-weight:600;margin:0 6px 8px 0}
-.kotak{background:var(--brand-weak);border-radius:16px;padding:20px 22px}
-.kotak p:last-child{margin:0}
-.cta{text-align:center;padding:52px 0 60px}
-footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:13.5px;color:var(--muted)}
-</style>
+<link rel="stylesheet" href="/gaya.css">
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <div class="merek">Ari Wibowo <span>· Portofolio</span></div>
-    <a class="btn" style="padding:9px 14px;font-size:14px" href="absensi-demo/">Coba demo</a>
+    <a class="merek" href="/">Ari Wibowo <span>· Portofolio</span></a>
+    <a class="btn kecil" href="/absensi-demo/">Coba demo aplikasi</a>
   </header>
 
-  <div class="hero">
-    <div>
-      <div class="kicker">Studi kasus</div>
-      <h1>Aplikasi absensi lapangan dan penggajian untuk kontraktor jalan</h1>
-      <p class="lead">Time sheet kertas dan rekap Excel saya ganti dengan aplikasi yang dipakai setiap hari oleh mandor di lapangan, staf payroll, dan direktur. Saya menyusun aturannya, membangun dan menjalankannya, lalu menyerahkannya ke pengembang internal.</p>
-      <div class="tombol">
-        <a class="btn utama" href="absensi-demo/">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          Coba demo, tanpa login</a>
-        <a class="btn" href="#video">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z"/></svg>
-          Tonton video 1 menit</a>
-      </div>
-      <p class="catatan">Demo dan video memakai data fiktif. Nama orang, perusahaan, dan proyek disamarkan.</p>
-    </div>
-    <div class="video" id="video">
-      <video controls playsinline preload="metadata" poster="video/poster.jpg">
-        <source src="video/absensi-demo.mp4" type="video/mp4">
-      </video>
-    </div>
+  <div style="padding:26px 0 34px">
+    <div class="kicker">Portofolio</div>
+    <h1 style="max-width:820px">Sistem keuangan dan operasional yang dipakai setiap hari</h1>
+    <p class="lead">Saya Ari Wibowo. Latar saya keuangan: 13 tahun di accounts receivable dan collection di perusahaan jasa migas multinasional. Kini saya merancang dan membangun sistem untuk usaha konstruksi, mulai dari absensi dan penggajian, kas lapangan, dan kontrol BBM, sampai laporan keuangan yang tersusun sendiri.</p>
   </div>
 
-  <div class="angka">
-    <div><b>138</b><span>pekerja terdaftar</span></div>
-    <div><b>5</b><span>proyek berjalan</span></div>
-    <div><b>5.232</b><span>absen dengan foto dan GPS</span></div>
-    <div><b>7</b><span>peran pengguna</span></div>
-    <div><b>±3 bulan</b><span>dari rancangan sampai serah terima</span></div>
+  <div class="proyek">
+    <a href="/absensi/">
+      <div class="kicker">Aplikasi</div>
+      <h3>Aplikasi absensi lapangan dan penggajian</h3>
+      <p>Time sheet kertas diganti aplikasi 7 peran: mandor mengabsen kru dengan foto dan GPS, gaji dihitung otomatis, Direktur menyetujui dari HP.</p>
+      <div class="poin"><span class="chip">138 pekerja</span><span class="chip">5.232 absen</span><span class="chip">Video + demo tanpa login</span></div>
+      <span class="lanjut">Baca studi kasus</span>
+    </a>
+    <a href="/kas-lapangan/">
+      <div class="kicker">Tata kelola keuangan</div>
+      <h3>SOP kas lapangan berbasis data</h3>
+      <p>Transaksi kas 19 bulan dianalisis menjadi SOP imprest, plafon bertingkat per pemegang kas, dan formulir persetujuan yang terisi otomatis.</p>
+      <div class="poin"><span class="chip">4.638 transaksi</span><span class="chip">16 pemegang kas</span><span class="chip">23 proyek</span></div>
+      <span class="lanjut">Baca studi kasus</span>
+    </a>
+    <a href="/fuel-tracker/">
+      <div class="kicker">Kontrol biaya operasional</div>
+      <h3>Penerapan fuel tracker untuk alat berat dan truk</h3>
+      <p>Kebocoran BBM diukur dari data kas, 140 unit alat dinilai kelayakannya untuk sensor BBM dan GPS, lalu pemasangannya disiapkan secara bertahap.</p>
+      <div class="poin"><span class="chip">140 unit alat</span><span class="chip">BBM 19% kas lapangan</span><span class="chip">Pertalite eceran +44%</span></div>
+      <span class="lanjut">Baca studi kasus</span>
+    </a>
+    <a href="/otomasi-keuangan/">
+      <div class="kicker">Otomasi keuangan</div>
+      <h3>Laporan keuangan harian dan audit jurnal mingguan otomatis</h3>
+      <p>Ringkasan keuangan terkirim tiap sore setelah angkanya diperiksa, dan jurnal seminggu diaudit AI tiap Senin. Berikutnya: Laba Rugi, Neraca, dan Arus Kas bulanan.</p>
+      <div class="poin"><span class="chip">17 cek angka</span><span class="chip">±8 detik per ringkasan</span><span class="chip">Audit tiap Senin</span></div>
+      <span class="lanjut">Baca studi kasus</span>
+    </a>
   </div>
-  <p class="catatan">Angka produksi per 23 September 2026, sekitar dua bulan setelah aplikasi mulai dipakai.</p>
 
-  <section>
-    <div class="dua">
-      <h2>Masalah awal</h2>
-      <ul class="daftar">
-        <li>Kehadiran pekerja proyek dicatat di time sheet kertas, lalu diketik ulang ke Excel untuk menghitung gaji. Tidak ada bukti yang bisa dicek ulang soal jam datang, siapa yang hadir, dan di lokasi mana.</li>
-        <li>Lembur, uang makan, dan potongan dihitung manual. Saat saya mengaudit 521 slip gaji Mei sampai Juli 2026, saya menemukan rumus yang menghitung upah yang sama dua kali (satu orang terkena tiga bulan berturut-turut) dan lembur 12 orang yang tercatat di time sheet tetapi tidak dibayar.</li>
-        <li>Proyek jalan berpindah lokasi setiap beberapa hari, sinyal di lapangan sering hilang, dan satu mandor mengurus belasan sampai puluhan orang dengan satu HP.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>Yang saya bangun</h2>
+  <section style="margin-top:44px">
+    <h2>Cara saya bekerja</h2>
     <div class="kartu">
       <div>
-        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
-        <h3>Absen di lokasi</h3>
-        <p>Mandor memotret tiap anggota kru. Jam dan titik GPS tercatat otomatis, lalu dicocokkan dengan radius proyek atau titik station jalan yang sedang dikerjakan.</p>
+        <h3>Mulai dari data</h3>
+        <p>Sebelum membuat aturan, saya membedah data yang ada: transaksi kas, slip gaji, catatan BBM. Angka plafon, prioritas, dan aturan diturunkan dari situ.</p>
       </div>
       <div>
-        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9a12 12 0 0 1 16 0M7 12.5a7.5 7.5 0 0 1 10 0M10.5 16a2.5 2.5 0 0 1 3 0"/><path d="M3 3l18 18"/></svg></div>
-        <h3>Tetap jalan tanpa sinyal</h3>
-        <p>Absen dan fotonya disimpan di HP, lalu terkirim sendiri saat sinyal kembali. Aplikasi dipasang dari browser (PWA), tanpa Play Store.</p>
+        <h3>Aturan ditulis, bukan diingat</h3>
+        <p>Setiap sistem punya dokumen aturan yang diperbarui tiap perubahan, supaya bisa diserahkan dan dijalankan orang lain.</p>
       </div>
       <div>
-        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div>
-        <h3>Gaji dihitung otomatis</h3>
-        <p>Satuan harian, bulanan, per jam, atau per ritase. Lembur hanya dibayar bila disetujui kepala lapangan. Uang makan mengikuti proyek. Hasilnya slip per orang dan ekspor Excel.</p>
-      </div>
-      <div>
-        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
-        <h3>Persetujuan berjenjang</h3>
-        <p>Payroll mengajukan, Direktur memeriksa rincian per pekerja lalu menyetujui, dan rekap terkunci. Perubahan tarif oleh admin juga menunggu persetujuan Direktur.</p>
-      </div>
-      <div>
-        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
-        <h3>Gaji tetap rahasia</h3>
-        <p>Peran lapangan tidak menerima angka rupiah sama sekali. Aturan ini dijaga di server, bukan sekadar disembunyikan di layar.</p>
-      </div>
-      <div>
-        <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L2.5 17.5A2 2 0 0 0 4.2 20.5h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></div>
-        <h3>Anomali tidak memotong diam-diam</h3>
-        <p>Lupa absen pulang, absen di luar radius, dan foto yang mencurigakan masuk antrean tinjau. Selama belum diputus Direktur, gaji tidak dipotong.</p>
+        <h3>Diuji sebelum dipakai</h3>
+        <p>Perubahan diuji pada salinan data dan dibandingkan sel per sel atau lewat gerbang uji otomatis sebelum menyentuh data sungguhan.</p>
       </div>
     </div>
   </section>
-
-  <section>
-    <h2>Tampilan</h2>
-    <div class="layar">
-      <figure><img src="img/kamera.webp" width="390" height="844" loading="lazy" alt="Layar kamera absen di HP mandor"><figcaption>Mandor memotret kru langsung dari HP.</figcaption></figure>
-      <figure><img src="img/detail-absen.webp" width="390" height="844" loading="lazy" alt="Detail absen: jam masuk, status tepat waktu, jarak dari titik proyek"><figcaption>Detail absen: jam, status, dan jarak dari titik proyek.</figcaption></figure>
-      <figure><img src="img/slip.webp" width="390" height="844" loading="lazy" alt="Slip gaji dengan rincian gaji pokok, lembur, dan uang makan"><figcaption>Slip gaji dengan rincian hitungannya.</figcaption></figure>
-      <figure><img src="img/approval.webp" width="390" height="844" loading="lazy" alt="Direktur memeriksa rincian gaji per pekerja sebelum menyetujui"><figcaption>Direktur memeriksa rincian sebelum menyetujui.</figcaption></figure>
-    </div>
-    <figure class="lebar"><img src="img/desktop-approval.webp" width="1920" height="1080" loading="lazy" alt="Tampilan desktop persetujuan gaji dengan kalender kehadiran di sebelah baris gaji"><figcaption>Di desktop, Direktur melihat kalender kehadiran tiap pekerja di sebelah baris gajinya.</figcaption></figure>
-  </section>
-
-  <section>
-    <div class="dua">
-      <h2>Peran saya</h2>
-      <div>
-        <ul class="daftar">
-          <li>Menyusun aturan bisnis bersama pemilik usaha, kepala lapangan, dan staf keuangan, lalu menuliskannya sebagai dokumen kebutuhan (PRD) yang diperbarui di setiap rilis.</li>
-          <li>Merancang tampilan untuk 7 peran, mulai dari prototipe yang bisa diklik sampai aplikasi produksi.</li>
-          <li>Membangun aplikasinya dengan bantuan AI coding assistant (Claude Code). Saya yang menentukan apa yang dibuat, memeriksa hasilnya, dan menguji setiap rilis sebelum dipasang.</li>
-          <li>Menjalankan server sendiri: VPS, domain, HTTPS, dan backup harian yang sudah diuji pulih.</li>
-          <li>Membuat buku panduan bergambar untuk tiap peran dan materi sosialisasi untuk pengguna.</li>
-          <li>Menyerahkan pemeliharaan ke pengembang internal pada September 2026, lengkap dengan dokumentasi, dan memastikan ia bisa membangun ulang semuanya dari nol.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="dua">
-      <h2>Hasil</h2>
-      <div>
-        <ul class="daftar">
-          <li>Absen kru di 5 proyek tercatat dengan foto, jam, dan titik GPS: 5.232 absen dari 138 pekerja dalam dua bulan pertama.</li>
-          <li>Gaji per periode dihitung dari data absen yang sama, tanpa mengetik ulang time sheet.</li>
-          <li>Masalah di lapangan bisa ditelusuri karena setiap absen punya jejak. Contohnya, satu proyek dengan 35 kru sempat tercatat nol absen selama tiga hari. Penyebabnya satu-satunya iPhone di sistem: tombol kameranya diam tanpa pesan apa pun. Saya menelusuri dan memperbaikinya di rilis berikutnya.</li>
-          <li>Aplikasi tetap berjalan setelah serah terima, dipelihara pengembang internal dengan prosedur rilis dan gerbang uji yang sama.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="dua">
-      <h2>Di balik layar</h2>
-      <div>
-        <p>
-          <span class="chip">React + TypeScript (PWA)</span><span class="chip">NestJS</span><span class="chip">PostgreSQL + Prisma</span><span class="chip">FastAPI untuk Excel &amp; PDF</span><span class="chip">Docker di VPS</span><span class="chip">Cloudflare R2</span>
-        </p>
-        <div class="kotak">
-          <p>Setiap rilis wajib lolos gerbang uji: 377 skenario end-to-end, 220 uji keamanan hak akses, dan hampir 900 unit test. Lebih dari 65 rilis dalam sekitar tiga bulan, masing-masing tercatat di log rilis.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="cta">
-    <h2>Coba sendiri</h2>
-    <p class="lead" style="margin:0 auto 18px">Pilih peran mana saja: Pelaksana, Payroll, Direktur, sampai Admin. Semua tombol berfungsi dengan data contoh.</p>
-    <a class="btn utama" href="absensi-demo/">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      Buka demo</a>
-  </div>
 </div>
 <footer>
-  <div class="wrap">© 2026 Ari Wibowo. Demo dan video memakai data fiktif; nama orang, perusahaan, dan proyek disamarkan.</div>
+  <div class="wrap">© 2026 Ari Wibowo. Demo, video, dan ilustrasi memakai data fiktif; nama orang, perusahaan, dan proyek disamarkan.</div>
 </footer>
 </body>
 </html>
