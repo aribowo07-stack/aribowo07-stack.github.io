@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!--
+    Favicon Absensi Lapangan — palet "Graphite + Iris" (tokens.css: --brand #7c8cff,
+    --brand-ink #0a0e24; kontras 6,40). Satu berkas datar tanpa varian
+    prefers-color-scheme: bidang iris membawa kontrasnya sendiri di tab terang
+    maupun gelap. Glif = path 'check' dari src/components/icons.ts.
+  -->
+  <rect width="32" height="32" rx="7" fill="#7c8cff"/>
+  <path d="M9.5 16.7 14 21l9-13.3" fill="none" stroke="#0a0e24" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

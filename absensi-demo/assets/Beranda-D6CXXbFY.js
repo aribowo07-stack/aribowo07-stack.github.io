@@ -1,0 +1,1 @@
+import{j as r}from"./index-Dj9vlqzr.js";import{PelaksanaBeranda as a}from"./Beranda-BvqIGyLy.js";import"./KehadiranDetail-Dn_tg3Wq.js";function e(){return r.jsx(a,{variant:"asisten"})}export{e as AsistenBeranda};

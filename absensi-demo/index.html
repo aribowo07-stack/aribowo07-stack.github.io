@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!--
+      Boot tema — HARUS blocking dan HARUS sebelum modul app.
+      Tanpa ini atribut data-theme belum ada saat cat pertama, sehingga tema
+      tersimpan diabaikan dan layar berkedip gelap->terang tiap muat ulang.
+    -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('abs-theme');
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          }
+          document.documentElement.setAttribute('data-theme', t);
+          var m = document.querySelector('meta[name="theme-color"]:not([media])');
+          if (m) m.setAttribute('content', t === 'light' ? '#edf0f4' : '#0a0b0d');
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+    <!-- Warna chrome browser = --page tema aktif; di-patch juga oleh lib/theme.ts. -->
+    <meta name="theme-color" content="#0a0b0d" />
+    <link rel="icon" type="image/svg+xml" href="/absensi-demo/favicon.svg" />
+    <title>Absensi Lapangan</title>
+    <script type="module" crossorigin src="/absensi-demo/assets/index-Dj9vlqzr.js"></script>
+    <link rel="stylesheet" crossorigin href="/absensi-demo/assets/index-lFUQzaxd.css">
+  </head>
+  <!--
+    <body> SENGAJA tanpa kelas warna Tailwind. Sebelumnya ada
+    class="bg-neutral-950 text-neutral-100" yang mengunci halaman ke #0a0a0a
+    dan membuat --page/--text mandul, sehingga tema terang mustahil tampil.
+  -->
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
